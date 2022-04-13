@@ -46,7 +46,13 @@ public class MainActivity extends AppCompatActivity{
     }
     private void investWord() {
         // Usando StringBuilder con Java sin usar codigo de Android
-        word = new StringBuilder(word).reverse().toString();
-        TBresult.setText(word);
+        //        word = new StringBuilder(word).reverse().toString();
+        // Usando el metodo .charAt(i) que maneja una palabra como Array...
+        //        .charAt(i) identifica un caracter de la palabra en posicion i
+        String invest = "";
+        for (int i = this.word.length() - 1; i >= 0; i--) {
+            invest += this.word.charAt(i);
+        }
+        TBresult.setText(invest);
     }
 }
