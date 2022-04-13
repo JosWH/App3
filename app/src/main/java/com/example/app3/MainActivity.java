@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity{
         });
     }
     private void recibeData() {
-        word = TXword.getText().toString();
+        word = TXword.getText().toString().toLowerCase();
     }
     private void investWord() {
         // Usando StringBuilder con Java sin usar codigo de Android
@@ -53,6 +53,8 @@ public class MainActivity extends AppCompatActivity{
         for (int i = this.word.length() - 1; i >= 0; i--) {
             invest += this.word.charAt(i);
         }
-        TBresult.setText(invest);
+        // Verificamos si la palabra es un palindromo
+        if (this.word.equals(invest)) TBresult.setText("Es un palindromo");
+        else TBresult.setText("No es un palindromo");
     }
 }
